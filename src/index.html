@@ -8,12 +8,13 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
      <title>Services</title>
   </head>
   <body>
 
     <!-- menu start -->
-     <aside style="position: fixes;">
+     <aside >
     <!-- header -->
         <header>
             <div class="header__buttons">
@@ -35,7 +36,7 @@
                 <li><a href="#" class="nav__link">Contacts</a></li>
             </ul>
         </nav>
-    
+
         <!-- footer -->
          <footer>
             <div class="footer__buttons">
@@ -54,9 +55,9 @@
                 <button>EN</button>
                 <button>CH</button>
             </div>
-            
+
          </footer>
-          
+
      </aside>
      <!-- menu end -->
 
@@ -148,7 +149,7 @@
     <!-- end responsive -->
 
 
-      <!-- show start -->
+      <!-- show1 start -->
     <div class="brands-title brands-title-for-tablet">REPAIR OF EQUIPMENT FROM VARIOUS BRANDS</div>
     <div class="brands-section">
       <div class="brands-grid" id="brandsGrid">
@@ -235,7 +236,9 @@
       >
     </div>
 
-    <!-- for mobile -->
+    <!-- show1 end -->
+
+    <!-- slider for mobile -->
     <div class="swiper mySwiper">
       <div class="brands-title">Repair of equipment from various brands</div>
       <div class="swiper-wrapper">
@@ -281,9 +284,106 @@
       <div class="swiper-pagination"></div>
     </div>
 
+    <!-- show2 start -->
+    <div class="brands-title brands-title-for-tablet">REPAIR OF VARIOUS TYPES OF EQUIPMENT</div>
+    <div class="brands-section">
+      <div class="brands-grid" id="brandsGrid">
+        <!-- Default visible brands -->
+        <div class="types"> <h3>Laptop repair</h3><img class="arrow" src="./img/icon.svg" alt="icon arrow"/></div>
+        <div class="types"><h3>Tablet repair</h3><img class="arrow" src="./img/icon.svg" alt="icon arrow"/></div>
+        <div class="types"><h3>PC repair</h3><img class="arrow" src="./img/icon.svg" alt="icon arrow"/></div>
+        <div class="types"><h3>Monitor repair</h3><img class="arrow" src="./img/icon.svg" alt="icon arrow"/></div>
 
-    <script>
-     const btn = document.getElementById('toggleBtn');
+
+        <!-- Extra brands to be toggled -->
+
+        <div class="types types_hidden"><h3>Smartphones repair</h3><img class="arrow" src="./img/icon.svg" alt="icon arrow"/></div>
+        <div class="types types_hidden"><h3>Motherboard repair</h3><img class="arrow" src="./img/icon.svg" alt="icon arrow"/></div>
+
+      </div>
+
+      <!-- Toggle button -->
+      <button class="toggle-btn" id="toggleBtnTypes">
+        <img id="btn_Icon" src="./img/expand.svg" alt="expand logo" /><span>Show all</span>
+        </button>
+    </div>
+    <!-- show2 end -->
+    <!-- table start -->
+    <div class="brands-title brands-title-for-tablet">SERVICE PRICES</div>
+    <div class="table-section">
+      <table class="prices-table">
+        <tr>
+          <th>Repair Service</th>
+          <th>Price</th>
+          <th>Deadline</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Diagnostics</td>
+          <td>Free</td>
+          <td>30 min</td>
+          <td> <button> <img src="img/Order_button.svg"></img> </button> </td>
+        </tr>
+        <tr>
+          <td>Screen replacement</td>
+          <td>$100</td>
+          <td>30-120 min</td>
+          <td><button> <img src="img/Order_button.svg"></img> </button></td>
+        </tr>
+        <tr>
+          <td>Battery replacement</td>
+          <td>$80</td>
+          <td>30-120 min</td>
+          <td><button> <img src="img/Order_button.svg"></img> </button></td>
+        </tr>
+        <tr>
+          <td>Keyboard replacement</td>
+          <td>$70</td>
+          <td>30-120 min</td>
+          <td><button> <img src="img/Order_button.svg"></img> </button></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- table end -->
+
+    <!-- footer -->
+    <footer class="main_footer">
+      <p class="footer__text">
+        All prices include VAT. The cost of repair is indicated for a single service. To receive a commercial proposal for ongoing maintenance, please submit a request.
+      </p>
+      <div class="footer__proposal-btn">
+        <p>Get a commercial proposal</p>
+        <img src="./img/MoreIcon.svg" alt="arrow right" />
+      </div>
+      <div class="footer__contact">
+        <div>
+          <p>© 2019 CPS</p>
+          <p> Developed by the Apesong team</p>
+        </div>
+        <div>Privacy Policy</div>
+        <div>The information on this page is not a public offer</div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    const btn = document.getElementById('toggleBtn');
     const hiddenItems = document.querySelectorAll('.hidden');
     let shown = false;
 
@@ -293,14 +393,38 @@
       });
       shown = !shown;
       if (shown) {
-    btnIcon.src = "showLess.png";
-    btn.innerHTML = `<img id="btnIcon" src="images/showLess.png" alt="Hide"> Hide`;
-  } else {
-    btnIcon.src = "expand.svg";
-    btn.innerHTML = `<img id="btnIcon" src="images/expand.svg" alt="Show"> Show more`;
-  }
+        btnIcon.src = "showLess.png";
+        btn.innerHTML = `<img id="btnIcon" src="img/showLess.png" alt="Hide"> Hide`;
+      } else {
+        btnIcon.src = "expand.svg";
+        btn.innerHTML = `<img id="btnIcon" src="img/expand.svg" alt="Show"> Show all `;
+      }
     });
   </script>
+
+
+ <script>
+    const btn = document.getElementById('toggleBtnTypes');
+    const hiddenItems = document.querySelectorAll('.types_hidden');
+    let shown = false;
+
+    btn.addEventListener('click', () => {
+      hiddenItems.forEach(item => {
+        item.classList.toggle('types_hidden');
+      });
+      shown = !shown;
+      if (shown) {
+        btn_Icon.src = "showLess.png";
+        btn.innerHTML = `<img id="btn_Icon" src="img/showLess.png" alt="Hide"> Hide`;
+      } else {
+        btn_Icon.src = "expand.svg";
+        btn.innerHTML = `<img id="btn_Icon" src="img/expand.svg" alt="Show"> Show all`;
+      }
+    });
+  </script>
+
+
+
 
 
 
@@ -318,9 +442,9 @@
   </script>
 
 
-    
 
-    
+
+
     <!-- show end -->
   </body>
 </html>

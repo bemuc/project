@@ -31,6 +31,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 // style for menu
@@ -272,7 +273,8 @@ main {
 .brands-grid {
   padding: 30px 30px 0 30px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  // grid-template-rows: repeat(auto, minmax(240px, 1fr));
   gap: 15px;
 }
 
@@ -284,13 +286,15 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0 10px;
   background-color: #ffffff;
-  width: 240px;
+  max-width: 240px;
+  width: 100%;
   height: 72px;
   border-radius: 6px;
   border: 1px solid rgb(231, 231, 231);
-  overflow-x: auto;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .hidden {
@@ -306,6 +310,9 @@ main {
   margin: 30px;
 }
 
+// end style for show1
+
+// style for slider
 .swiper {
   width: 100%;
   height: 100%;
@@ -332,10 +339,100 @@ main {
   display: block;
   width: auto;
 }
-// media for main section
-//  for large PCs
+
+// style for show2
+.types {
+  position: relative;
+  display: grid;
+  width: 200px;
+  height: 160px;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 6px;
+  background-color: #ffffff;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  padding: 0 30px 0 30px;
+}
+.types h3 {
+  font-size: 16px;
+  font-weight: 500;
+
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+.types .arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.types_hidden {
+  display: none;
+}
+
+// table design
+.table-section {
+  padding: 50px;
+  background-color: #fafafa;
+  border-top: 1px solid #d9fff5;
+  padding-bottom: 30px;
+  border: 1 px solid blue;
+}
+table {
+  width: 100%;
+  padding: 20px 0 0 0;
+  // margin-right: -10px;
+  border-collapse: collapse;
+  // margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  // border: 1px solid red;
+}
+
+th {
+  background-color: #f8f8f8;
+  font-weight: 400;
+  font-size: 16px;
+  border-bottom: 2px solid #e7e7e7;
+}
+th,
+td {
+  text-align: left;
+  padding: 12px 15px;
+}
+td {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.btn_order {
+  color: #ffffff;
+  background-color: #ff3e79;
+  border-radius: 50px;
+}
+
+// footer
+
+.footer__text {
+  width: 50%;
+}
+
+.footer__proposal-btn {
+  display: flex;
+}
+.footer__contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 10px;
+}
 
 @media (min-width: 1120px) {
+  // media for main section
+  //  for large PCs
   main {
     margin-left: 276px;
   }
@@ -344,6 +441,17 @@ main {
   }
   .brands-section {
     margin-left: 276px;
+  }
+  .table-section {
+    margin-left: 276px;
+  }
+  .main_footer {
+    margin-left: 276px;
+    width: calc(100% - 276px);
+    background-color: #f8f8f8;
+    padding: 20px 0 20px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
   }
 }
 /* for tablet */
@@ -492,6 +600,21 @@ main {
     width: 100vw;
     margin-left: -19px;
     border-radius: 0px;
+  }
+  .main_footer {
+    margin: 20px;
+    width: 100%;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+  }
+  .footer__text {
+    width: 100%;
+    border: 1px solid red;
+  }
+  .footer__contact {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
 // end media for main section

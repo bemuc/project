@@ -74,6 +74,9 @@ ul {
 
 // large screens
 @media (min-width: 1120px) {
+  #closeBurgerBtn {
+    display: none;
+  }
   main {
     margin-left: 276px;
   }
@@ -100,18 +103,6 @@ ul {
   }
 }
 
-// .nav {
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 28px;
-//   font-size: 16px;
-//   color: colors.$color-text-muted;
-//   font-weight: 400;
-//   box-sizing: border-box;
-// }
-
-// tablet
-
 // mobile main layout
 @media (max-width: 768px) {
   .mobile_text {
@@ -135,7 +126,3 @@ ul {
     }
   }
 }
-
-// media for slider
-
-// tablet slider

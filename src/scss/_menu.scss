@@ -7,7 +7,7 @@ aside {
   width: 276px;
   height: 100vh;
   overflow-y: auto;
-  min-height: 750px;
+  min-height: 350px;
   background-color: colors.$color-white;
   box-shadow: 16px 0px 52px 0px colors.$color-shadow-x,
     -2px 0px 4px 0px colors.$color-shadow-y;
@@ -17,15 +17,12 @@ aside {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding: 10px 20px;
   }
 
   ul {
     padding-inline-start: 0px;
   }
-}
-.aside--open {
-  display: flex;
 }
 
 @media (min-width: 768px) and (max-width: 1120px) {

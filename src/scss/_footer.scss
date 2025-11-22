@@ -1,0 +1,114 @@
+@use 'colors';
+
+footer {
+  margin-top: auto;
+  bottom: 0;
+  width: 320px;
+  font-family: 'TT Lakes', sans-serif;
+
+  .footer__buttons {
+    padding-left: 20px;
+  }
+
+  .footer__contacts {
+    font-family: 'TT Lakes', sans-serif;
+    padding-left: 20px;
+  }
+}
+
+.footer__email,
+.footer__number {
+  font-family: 'TT Lakes', sans-serif;
+}
+
+.footer {
+  &__email {
+    font-size: 16px;
+  }
+
+  &__number {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__lang {
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+    button {
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    width: 50%;
+  }
+
+  &__proposal-btn {
+    display: flex;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid colors.$color-border-mint;
+  }
+}
+
+@media (min-width: 1120px) {
+  .main_footer {
+    margin-left: 276px;
+    width: calc(100% - 276px);
+    background-color: colors.$color-bg-section;
+    padding: 20px 0 20px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .main_footer {
+    padding: 20px;
+    width: 100%;
+    background-color: colors.$color-bg-section;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_footer {
+    padding: 20px;
+    width: 100%;
+    background-color: colors.$color-bg-section;
+    box-sizing: border-box;
+  }
+
+  .footer__text {
+    width: 100%;
+    // border: 1px solid colors.$color-debug-red;
+  }
+
+  .footer__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    border-top: 1px solid colors.$color-border-mint;
+  }
+  .footer__copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // gap: 30px;
+  }
+}

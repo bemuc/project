@@ -1,0 +1,56 @@
+@use 'colors';
+
+aside {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 276px;
+  height: 100vh;
+  overflow-y: auto;
+  min-height: 750px;
+  background-color: colors.$color-white;
+  box-shadow: 16px 0px 52px 0px colors.$color-shadow-x,
+    -2px 0px 4px 0px colors.$color-shadow-y;
+  z-index: 1;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+  }
+
+  ul {
+    padding-inline-start: 0px;
+  }
+}
+.aside--open {
+  display: flex;
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  aside {
+    display: none;
+  }
+  aside.aside--open {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 768px) {
+  aside {
+    display: none;
+  }
+
+  aside.aside--open {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+}

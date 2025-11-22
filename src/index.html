@@ -8,10 +8,15 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
     <link
-      rel="stylesheets"
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
+
     <title>Services</title>
   </head>
   <body>
@@ -19,7 +24,9 @@
       <!-- header -->
       <header>
         <div class="header__buttons">
-          <button><img src="./img/burger.svg" alt="close_menu_image" /></button>
+          <button id="closeBurgerBtn"
+            ><img src="./img/burger.svg" alt="close_menu_image"
+          /></button>
           <img src="./img/logo.svg" alt="logo_image" />
         </div>
         <button><img src="./img/search.svg" alt="search_image" /></button>
@@ -63,7 +70,7 @@
       <!-- for mobile -->
       <menu class="menu">
         <div class="menu__group">
-          <button
+          <button id="burgerBtn"
             ><img src="./img/burger.svg" alt="hamburger_menu_logo"
           /></button>
           <img class="divider__tablet" src="./img/divider.svg" alt="divider" />
@@ -212,18 +219,18 @@
 
     <!-- show1 end -->
 
-    <!-- slider for mobile -->
+    <!-- slider 1 for mobile -->
     <div class="swiper mySwiper">
-      <div class="brands-title">Repair of equipment from various brands</div>
+      <div class="brands-title">REPAIR OF EQUIPMENT FROM VARIOUS BRANDS</div>
       <div class="swiper-wrapper">
-        <div class="swiper-slide"
-          ><img src="./img/lenovo.svg" /><img
-            src="./img/icon.svg"
-            alt="icon arrow"
-        /></div>
-        <div class="swiper-slide"
-          ><img src="./img/hp.svg" /><img src="./img/icon.svg" alt="icon arrow"
-        /></div>
+        <div class="swiper-slide">
+          <img src="./img/lenovo.svg" />
+          <img src="./img/icon.svg" alt="icon arrow" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/hp.svg" />
+          <img src="./img/icon.svg" alt="icon arrow" />
+        </div>
         <div class="swiper-slide"
           ><img src="./img/acer.svg" /><img
             src="./img/icon.svg"
@@ -266,9 +273,9 @@
       <div class="brands-grid" id="brandsGrid">
         <!-- Default visible brands -->
         <div class="types">
-          <h3>Laptop repair</h3
-          ><img class="arrow" src="./img/icon.svg" alt="icon arrow"
-        /></div>
+          <h3>Laptop repair</h3>
+          <img class="arrow" src="./img/icon.svg" alt="icon arrow" />
+        </div>
         <div class="types"
           ><h3>Tablet repair</h3
           ><img class="arrow" src="./img/icon.svg" alt="icon arrow"
@@ -302,8 +309,33 @@
       </button>
     </div>
     <!-- show2 end -->
+
+    <!-- slider for mobile -->
+    <div class="swiper myswiper2">
+      <div class="brands-title">REPAIR OF VARIOUS TYPES OF EQUIPMENT</div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <h3>Laptop repair</h3>
+          <img class="arrow" src="./img/icon.svg" alt="icon arrow" />
+        </div>
+        <div class="swiper-slide">
+          <h3>Laptop repair</h3>
+          <img class="arrow" src="./img/icon.svg" alt="icon arrow" />
+        </div>
+        <div class="swiper-slide">
+          <h3>Laptop repair</h3>
+          <img class="arrow" src="./img/icon.svg" alt="icon arrow" />
+        </div>
+        <div class="swiper-slide">
+          <h3>Laptop repair</h3>
+          <img class="arrow" src="./img/icon.svg" alt="icon arrow" />
+        </div>
+      </div>
+      <div class="myswiper2-pagination"></div>
+    </div>
+
     <!-- table start -->
-    <div class="brands-title brands-title-for-tablet">SERVICE PRICES</div>
+    <div class="brands-title">SERVICE PRICES</div>
     <div class="table-section">
       <table class="prices-table">
         <tr>
@@ -346,8 +378,106 @@
         </tr>
       </table>
     </div>
-
     <!-- table end -->
+
+    <!-- slider 3 -->
+    <div class="swiper mySwiper3">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="row">
+            <div class="label">Repair services</div>
+            <div class="text-main">Diagnostics</div>
+          </div>
+
+          <div class="row">
+            <div class="label">Price</div>
+            <div class="text-main">Free of charge</div>
+          </div>
+
+          <div class="last-row">
+            <div class="row">
+              <div class="label">Term</div>
+              <div class="text-main">30 mins</div>
+            </div>
+            <div class="card-footer">
+              <button class="order-btn">
+                ORDER <span class="arrow">›</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="row">
+            <div class="label">Repair services</div>
+            <div class="text-main">Screen Replacement</div>
+          </div>
+
+          <div class="row">
+            <div class="label">Price</div>
+            <div class="text-main">100 $</div>
+          </div>
+
+          <div class="last-row">
+            <div class="row">
+              <div class="label">Term</div>
+              <div class="text-main">30–120 mins</div>
+            </div>
+            <div class="card-footer">
+              <button class="order-btn">
+                ORDER <span class="arrow">›</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="row">
+            <div class="label">Repair services</div>
+            <div class="text-main">Battery replacement</div>
+          </div>
+
+          <div class="row">
+            <div class="label">Price</div>
+            <div class="text-main">80 $</div>
+          </div>
+
+          <div class="last-row">
+            <div class="row">
+              <div class="label">Term</div>
+              <div class="text-main">30–120 mins</div>
+            </div>
+            <div class="card-footer">
+              <button class="order-btn">
+                ORDER <span class="arrow">›</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="row">
+            <div class="label">Repair services</div>
+            <div class="text-main">Keyboard replacement</div>
+          </div>
+
+          <div class="row">
+            <div class="label">Price</div>
+            <div class="text-main">70 $</div>
+          </div>
+
+          <div class="last-row">
+            <div class="row">
+              <div class="label">Term</div>
+              <div class="text-main">30–120 mins</div>
+            </div>
+            <div class="card-footer">
+              <button class="order-btn">
+                ORDER <span class="arrow">›</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper3-pagination"></div>
+    </div>
 
     <!-- footer -->
     <footer class="main_footer">
@@ -361,7 +491,7 @@
         <img src="./img/MoreIcon.svg" alt="arrow right" />
       </div>
       <div class="footer__contact">
-        <div>
+        <div class="footer__copyright">
           <p>© 2019 CPS</p>
           <p> Developed by the Apesong team</p>
         </div>
@@ -369,5 +499,7 @@
         <div>The information on this page is not a public offer</div>
       </div>
     </footer>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   </body>
 </html>

@@ -39,8 +39,9 @@ btn2.addEventListener('click', () => {
   }
 })
 
-src = 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js'
-let swiper = new Swiper('.mySwiper', {
+// swipper 1
+
+let swiper1 = new Swiper('.mySwiper', {
   slidesPerView: 'auto',
   spaceBetween: 30,
   pagination: {
@@ -48,3 +49,41 @@ let swiper = new Swiper('.mySwiper', {
     clickable: true
   }
 })
+
+// swipper 2
+
+let swiper2 = new Swiper('.myswiper2', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  pagination: {
+    el: '.myswiper2-pagination',
+    clickable: true
+  }
+})
+
+// swipper 3`
+let swiper3 = new Swiper('.mySwiper3', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  pagination: {
+    el: '.swiper3-pagination',
+    clickable: true
+  }
+})
+
+// toggle aside on mobile/tablet
+const aside = document.querySelector('aside')
+const burgerBtn = document.getElementById('burgerBtn')
+const closeAsideBtn = document.getElementById('closeBurgerBtn')
+
+if (burgerBtn && aside) {
+  burgerBtn.addEventListener('click', () => {
+    aside.classList.add('aside--open')
+  })
+}
+
+if (closeAsideBtn && aside) {
+  closeAsideBtn.addEventListener('click', () => {
+    aside.classList.remove('aside--open')
+  })
+}
